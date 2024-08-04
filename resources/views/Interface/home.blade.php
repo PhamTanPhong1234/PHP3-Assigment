@@ -1,5 +1,5 @@
-@extends('Interface.layouts.header')
-<div id="wrapper">
+@extends('Interface.layouts.layout')
+@section('content')
     <section class="section first-section">
         <div class="container-fluid">
             <div class="masonry-blog clearfix">
@@ -53,7 +53,6 @@
             </div><!-- end masonry -->
         </div>
     </section>
-
     <section class="section">
         <div class="container">
             <div class="row">
@@ -501,6 +500,5 @@
             </div><!-- end row -->
         </div><!-- end container -->
     </section>
-    @extends('Interface.layouts.footer')
+@endsection
 
-</div><!-- end wrapper -->

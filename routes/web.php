@@ -55,3 +55,7 @@ Route::group(['prefix' => 'Admin','middleware'=>'AdminLogin'], function () {
         Route::get('/xoa-nguoi-dung/{id}', [UsersController::class, 'xoaNguoiDung']);
     });
 });
+
+Route::get('/', function () {
+    return view('Interface/home');
+});

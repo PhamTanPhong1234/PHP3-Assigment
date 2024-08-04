@@ -1,7 +1,6 @@
-@extends('Interface.layouts.header')
-<p>{{$id}}</p>
-<div id="wrapper">
-    <section class="section single-wrapper">
+@extends('Interface.layouts.layout')
+@section('content')
+ <section class="section single-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -36,7 +35,4 @@
         </div><!-- end container -->
     </section>
 
-
-   
-
-</div><!-- end wrapper --> @extends('Interface.layouts.footer')
+@endsection
