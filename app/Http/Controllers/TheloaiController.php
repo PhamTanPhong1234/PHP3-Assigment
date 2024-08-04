@@ -14,7 +14,7 @@ class TheloaiController extends Controller
     function TheLoai()
     {
 
-        $theloai = TheLoai::all();
+        $theloai = TheLoai::paginate(10);
         return view('Admin/DanhMuc/theloai', ['theloai' => $theloai]);
     }
     function themTheLoai(Request $request)

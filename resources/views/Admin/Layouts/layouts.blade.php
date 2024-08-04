@@ -50,22 +50,25 @@ font-size: 16px;"><a href="" class="btn btn-danger square-btn-adjust">Quay Về 
                         <img src="{{asset('admin/img/find_user.png')}}" class="user-image img-responsive" />
                     </li>
                     <li>
-                        <a href=""><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                        <a href="{{url('Admin/dashboard')}}"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href=""><i class="fa fa-desktop fa-3x"></i> Quản Lý Người Dùng</a>
+                        <a href="{{url('Admin/nguoidung/xem-nguoi-dung')}}"><i class="fa fa-desktop fa-3x"></i> Quản Lý Người Dùng</a>
                     </li>
                     <li>
-                        <a href=""><i class="fa fa-table fa-3x"></i> Quản Lý Bài Viết</a>
+                        <a href="{{url('Admin/tintuc/xem-tin-tuc')}}"><i class="fa fa-table fa-3x"></i> Quản Lý Tin Tức</a>
                     </li>
                     <li>
-                        <a href=""><i class="fa fa-table fa-3x"></i> Thêm Bài Viết</a>
+                        <a href="{{url('Admin/tintuc/them-tin-tuc')}}"><i class="fa fa-table fa-3x"></i> Thêm Tin Tức</a>
                     </li>
                     <li>
-                        <a href=""><i class="fa fa-bar-chart-o fa-3x"></i> Danh Mục </a>
+                        <a href="{{url('Admin/danhmuc/the-loai')}}"><i class="fa fa-table fa-3x"></i> Quản Lý Thể Loại</a>
                     </li>
                     <li>
-                        <a href=""><i class="fa fa-edit fa-3x"></i>Log Out</a>
+                        <a href="{{url('Admin/danhmuc/loai-tin')}}"><i class="fa fa-table fa-3x"></i> Quản Lý Loai Tin</a>
+                    </li>
+                    <li>
+                        <a href="{{route('logout')}}"><i class="fa fa-edit fa-3x"></i>Log Out</a>
                     </li>
                 </ul>
 

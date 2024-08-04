@@ -12,7 +12,7 @@ class LoaiTinController extends Controller
     function LoaiTin()
     {
         $theloai = TheLoai::all();
-        $loaitin = LoaiTin::all();
+        $loaitin = LoaiTin::paginate(10);
         return view('Admin/DanhMuc/loaitin', ['loaitin' => $loaitin], ['theloai' => $theloai]);
     }
     function themLoaiTin(Request $request)
@@ -22,7 +22,7 @@ class LoaiTinController extends Controller
         $loaitin = new LoaiTin;
         $loaitin->Ten = $request->Ten;
         $loaitin->TenKhongDau = $request->TenKD;
-        $loaitin->idTheLoai =$request->category_id;
+        $loaitin->idTheLoai = $request->category_id;
         $loaitin->save();
         return redirect('Admin/danhmuc/loai-tin')->with('thongbao', 'Thêm Thành Công');
     }
@@ -30,7 +30,7 @@ class LoaiTinController extends Controller
     {
         $theloai = TheLoai::all();
         $loaitin = LoaiTin::find($id);
-        return view('Admin/DanhMuc/sualoaitin', ['loaitin' => $loaitin],['theloai'=> $theloai]);
+        return view('Admin/DanhMuc/sualoaitin', ['loaitin' => $loaitin], ['theloai' => $theloai]);
     }
     function postSuaLoaiTin(Request $request, $id)
     {
@@ -39,18 +39,14 @@ class LoaiTinController extends Controller
         $this->validate($request, ['TenKD' => 'required|unique:LoaiTin,TenKhongDau|min:3|max:100'], ['TenKD.required' => 'Bạn chưa nhập tên không dấu thể loại.', 'Ten.unique' => 'Tên Không Dấu đã tồn tại', 'TenKD.min' => 'Tên không dấu thể Loại Quá Ngắn', 'TenKD.max' => 'Tên không dấu thể Loại Quá Dài']);
         $loaitin->Ten = $request->Ten;
         $loaitin->TenKhongDau = $request->TenKD;
-        $loaitin->idTheLoai =$request->category_id;
-        $loaitin->save();
+        $loaitin->idTheLoai = $request->category_id;
+        $loaitin->update();
         return redirect('Admin/danhmuc/sua-loai-tin/' . $id)->with('thongbao', 'Sửa Loại Tin Thành Công');
     }
     public function xoaLoaiTin($id)
     {
         $loaitin = LoaiTin::find($id);
-        if ($loaitin) {
-            $loaitin->delete();
-            return redirect('Admin/danhmuc/loai-tin')->with('thongbao', 'Xóa Thành Công');
-        } else {
-            return redirect('Admin/danhmuc/loai-tin')->withErrors('Không tìm thấy loại tin để xóa.');
-        }
+        $loaitin->delete();
+        return redirect('Admin/danhmuc/loai-tin/')->with('thongbao', 'Xóa Loại Tin Thành Công');
     }
 }

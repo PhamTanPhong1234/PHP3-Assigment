@@ -56,9 +56,12 @@
             </thead>
             <tbody id="categoryList">
                 <!-- Sample data -->
+                @php
+                $stt = 1
+                @endphp
                 @foreach ($loaitin as $lt)
                 <tr>
-                    <td>{{$lt->id}}</td>
+                    <td>{{$stt}}</td>
                     <td>{{$lt->Ten}}</td>
                     <td>{{$lt->TenKhongDau}}</td>
                     <td>{{$lt->theloai->Ten}}</td>
@@ -71,10 +74,14 @@
                         </button>
                     </td>
                 </tr>
+                @php
+                $stt++;
+                @endphp
                 @endforeach
                 <!-- Add more category rows here dynamically -->
             </tbody>
         </table>
+        {{$loaitin->links()}}
     </div>
 </div>
 @endsection

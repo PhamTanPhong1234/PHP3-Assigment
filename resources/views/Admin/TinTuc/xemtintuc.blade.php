@@ -21,30 +21,44 @@
     <!-- Right side: Article list -->
     <div class="col-md-12">
         <h3>Danh sách bài viết</h3>
+        @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            @foreach ($errors->all() as $err )
+            {{$err}} <br>
+            @endforeach
+        </div>
+        @endif
+        @if(session('thongbao'))
+        <div class="alert alert-success">
+            {{session('thongbao')}}
+        </div>
+        @endif
         <table class="table border">
             <thead class="thead-light">
-                <tr>
-                    <th>ID</th>
-                    <th>Tiêu đề</th>
-                    <th>Mô tả</th>
-                    <th>Nội dung</th>
-                    <th>Thể Loại</th>
-                    <th>Loại Tin</th>
-                    <th>xem</th>
-                    <th>Nổi bật</th>
-                    <th class="text-right">Hành động</th>
+                <th>STT</th>
+                <th>Tiêu đề</th>
+                <th>Mô tả</th>
+                <th>Hình ảnh</th>
+                <th>Thể Loại</th>
+                <th>Loại Tin</th>
+                <th>Lượt xem</th>
+                <th>Nổi bật</th>
+                <th class="text-right">Hành động</th>
                 </tr>
             </thead>
             <tbody id="articleList">
                 <!-- Sample data -->
+                @php
+                $stt =1
+                @endphp
                 @foreach ($tintuc as $tt)
                 <tr>
-                    <td>{{$tt->id}}</td>
+                    <td>{{$stt}}</td>
                     <td>
                         {{$tt->TieuDe}}
                     </td>
                     <td>{{$tt->TomTat}}</td>
-                    <td>{{$tt->NoiDung}}</td>
+                    <td><img src="{{ asset('images/' . $tt->Hinh) }}" alt="Hình ảnh" style="width: 100px; height: auto;"></td>
                     <td>{{$tt->LoaiTin->TheLoai->Ten}}</td>
                     <td>{{$tt->LoaiTin->Ten}}</td>
                     <td>{{$tt->SoLuotXem}}</td>
@@ -56,14 +70,18 @@
                         @endif
                     </td>
                     <td class="text-right action-buttons">
-                        <button class="btn btn-warning btn-sm"><a href="">Sửa</a></button>
-                        <button class="btn btn-danger btn-sm"><a href="">Xóa</a></button>
+                        <button class="btn btn-warning btn-sm"><a href="{{url('Admin/tintuc/sua-tin-tuc/' . $tt->id)}}">Sửa</a></button>
+                        <button class="btn btn-danger btn-sm"><a href="{{url('Admin/tintuc/xoa-tin-tuc/' . $tt->id)}}">Xóa</a></button>
                     </td>
                 </tr>
+                @php
+                $stt++
+                @endphp
                 @endforeach
                 <!-- Add more article rows here dynamically -->
             </tbody>
         </table>
+        {{$tintuc->links()}}
     </div>
 </div>
 @endsection

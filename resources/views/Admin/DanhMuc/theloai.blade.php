@@ -44,10 +44,13 @@
                 </tr>
             </thead>
             <tbody id="categoryList">
+                @php
+                $stt =1
+                @endphp
                 <!-- Sample data -->
                 @foreach ($theloai as $tl)
                 <tr>
-                    <td>{{$tl->id}}</td>
+                    <td>{{$stt}}</td>
                     <td>{{$tl->Ten}}</td>
                     <td>{{$tl->TenKhongDau}}</td>
                     <td class="action-buttons text-right">
@@ -55,14 +58,19 @@
                             <a href="sua-the-loai/{{$tl->id}}" style="padding:5px;color:#fff;">Sửa</a>
                         </button>
                         <button class="btn btn-danger btn-sm ml-2">
-                            <a href="xoa/{{$tl->id}}"  style="padding:5px;color:#fff;">Xóa</a>
+                            <a href="xoa-the-loai/{{$tl->id}}" style="padding:5px;color:#fff;">Xóa</a>
                         </button>
                     </td>
                 </tr>
+                @php
+                $stt++;
+                @endphp
                 @endforeach
                 <!-- Add more category rows here dynamically -->
             </tbody>
         </table>
+        {{$theloai->links()}}
     </div>
+    =
 </div>
 @endsection
