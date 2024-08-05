@@ -19,7 +19,9 @@
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
 <!-- Design fonts -->
-<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 
 <!-- Bootstrap core CSS -->
 <link href="{{ asset('css/bootstrap.css')}}" rel="stylesheet">
@@ -43,7 +45,11 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+<style>
+    html {
+        font-family: "Afacad", sans-serif;
+    }
+</style>
 </head>
 
 <body>
@@ -58,24 +64,24 @@
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="">Home</a>
+                                <a class="nav-link" href="" style="font-size: 20px;">Trang Chủ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">Hot News</a>
+                                <a class="nav-link" href="" style="font-size: 20px;">Thể Loại</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">News</a>
+                                <a class="nav-link" href="" style="font-size: 20px;">Tin Tức</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">Contact Us</a>
+                                <a class="nav-link" href="" style="font-size: 20px;">Liên Hệ</a>
                             </li>
                         </ul>
                         <ul class="navbar-nav mr-2">
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa fa-search"></i></a>
+                                <a class="nav-link" href="#" style="font-size: 20px;"><i class="fa fa-search"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href=""><i class="fa fa-user"></i></a>
+                                <a class="nav-link" href="" style="font-size: 20px;"><i class="fa fa-user"></i></a>
                             </li>
                             <li class="nav-item">
                         </ul>

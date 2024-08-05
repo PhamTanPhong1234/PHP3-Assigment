@@ -406,7 +406,7 @@ div.tab button:hover {
     padding: 4rem 0;
     display: block;
     position: relative;
-    background-color: #ffffff;
+    background-color: rgb(247, 247, 247);
 }
 
 .section.lb {
@@ -515,7 +515,7 @@ div.tab button:hover {
 }
 
 .portfolio .blog-meta span a {
-    color: #fff !important;
+    color: #fff ;
     line-height: 1;
     padding: 0.2rem 1rem;
     font-size: 12px;
@@ -524,6 +524,7 @@ div.tab button:hover {
 }
 
 .portfolio .blog-meta h4 {
+    background-color: rgb(247, 247, 247);
     margin: 0;
     font-size: 20px;
     padding: 0.4rem 0 0.2rem;

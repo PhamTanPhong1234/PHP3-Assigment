@@ -6,6 +6,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LoaiTinController;
 use App\Http\Controllers\TheloaiController;
+use App\Http\Controllers\interfaceController;
 use App\Models\LoaiTin;
 
 /*
@@ -21,11 +22,11 @@ use App\Models\LoaiTin;
 
 Route::get('Admin/dang-nhap', [UsersController::class, 'dangnhapAdmin']);
 Route::post('Admin/dang-nhap', [UsersController::class, 'postdangnhapAdmin']);
-Route::group(['prefix' => 'Admin','middleware'=>'AdminLogin'], function () {
+Route::group(['prefix' => 'Admin', 'middleware' => 'AdminLogin'], function () {
     Route::get('dashboard', function () {
         return view('Admin/dashboard');
     });
-    Route::get('/logout', [UsersController::class, 'dangxuatAdmin'])->name('logout') ;
+    Route::get('/logout', [UsersController::class, 'dangxuatAdmin'])->name('logout');
 
     Route::group(['prefix' => 'danhmuc'], function () {
         Route::get('/the-loai', [TheloaiController::class, 'TheLoai']);
@@ -59,3 +60,10 @@ Route::group(['prefix' => 'Admin','middleware'=>'AdminLogin'], function () {
 Route::get('/', function () {
     return view('Interface/home');
 });
+Route::get('/', [interfaceController::class, 'index'])->name('index');
+Route::get('/hot-news', [interfaceController::class, 'hot'])->name('hot');
+Route::get('/contact-us', [interfaceController::class, 'contact'])->name('contact');
+Route::get('/news/{id}', [interfaceController::class, 'view']);
+Route::get('/news', [interfaceController::class, 'news'])->name('news');
+Route::get('/login', [interfaceController::class, 'login'])->name('login');
+Route::get('/register', [interfaceController::class, 'register'])->name('register');
