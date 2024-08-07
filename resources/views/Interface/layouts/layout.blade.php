@@ -64,16 +64,16 @@
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="" style="font-size: 20px;">Trang Chủ</a>
+                                <a class="nav-link" href="/" style="font-size: 20px;">Trang Chủ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="" style="font-size: 20px;">Thể Loại</a>
+                                <a class="nav-link" href="/hot-news" style="font-size: 20px;">Thể Loại</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="" style="font-size: 20px;">Tin Tức</a>
+                                <a class="nav-link" href="/news" style="font-size: 20px;">Tin Tức</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="" style="font-size: 20px;">Liên Hệ</a>
+                                <a class="nav-link" href="/contact-us" style="font-size: 20px;">Liên Hệ</a>
                             </li>
                         </ul>
                         <ul class="navbar-nav mr-2">
@@ -81,7 +81,7 @@
                                 <a class="nav-link" href="#" style="font-size: 20px;"><i class="fa fa-search"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="" style="font-size: 20px;"><i class="fa fa-user"></i></a>
+                                <a class="nav-link" href="{{route('login')}}" style="font-size: 20px;"><i class="fa fa-user"></i></a>
                             </li>
                             <li class="nav-item">
                         </ul>

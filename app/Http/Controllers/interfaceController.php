@@ -1,7 +1,11 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
+
 namespace App\Http\Controllers;
+
 use App\Models\TinTuc;
 use App\Models\TheLoai;
 use App\Models\LoaiTin;
@@ -11,8 +15,10 @@ class interfaceController extends Controller
 {
     function index()
     {
+        $theloai = TheLoai::take(10)->get();
         $tintuc = TinTuc::paginate(10);
-        return view('Interface/home', ['tintuc' =>$tintuc]);
+        $tinhot= TinTuc::orderBy('SoLuotXem', 'desc')->take(5)->get();
+        return view('Interface/home', ['tintuc' => $tintuc, 'theloai' => $theloai,'tinhot'=>$tinhot]);
     }
     function hot()
     {

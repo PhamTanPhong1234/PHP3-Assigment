@@ -56,7 +56,7 @@
             <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                 <div class="page-wrapper">
                     <div class="blog-top clearfix">
-                        <h4 class="pull-left">Tin Mới Nhất <a href="#"><i class="fa fa-rss"></i></a></h4>
+                        <h4 class="pull-left">TIN MỚI NHẤT<a href="#"><i class="fa fa-rss"></i></a></h4>
                     </div><!-- end blog-top -->
 
                     <div class="blog-list clearfix">
@@ -78,7 +78,7 @@
                                 <p>{{$tt->TomTat}}</p>
                                 <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">{{$tt->LoaiTin->TheLoai->Ten}}</a></small>
                                 <small><a href="tech-single.html" title="">{{ $tt->created_at->format('d-m-Y') }}</a></small>
-                
+
                                 <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> {{$tt->SoLuotXem}}</a></small>
                             </div><!-- end meta -->
                         </div><!-- end blog-box -->
@@ -104,101 +104,51 @@
                     <div class="widget">
                         <div class="banner-spot clearfix">
                             <div class="banner-img">
-                                <img src="upload/banner_07.jpg" alt="" class="img-fluid">
+                                <img src="https://photo-cms-kienthuc.epicdn.me/w730/Uploaded/2022/afsgy/2022_12_07/trinh-ba-quat-ha-noi-864.jpg" alt="" class="img-fluid">
                             </div><!-- end banner-img -->
                         </div><!-- end banner -->
                     </div><!-- end widget -->
 
                     <div class="widget">
-                        <h2 class="widget-title">Trend Videos</h2>
-                        <div class="trend-videos">
-                            <div class="blog-box">
-                                <div class="post-media">
-                                    <a href="tech-single.html" title="">
-                                        <img src="upload/tech_video_01.jpg" alt="" class="img-fluid">
-                                        <div class="hovereffect">
-                                            <span class="videohover"></span>
-                                        </div><!-- end hover -->
-                                    </a>
-                                </div><!-- end media -->
-                                <div class="blog-meta">
-                                    <h4><a href="tech-single.html" title="">We prepared the best 10 laptop presentations for you</a></h4>
-                                </div><!-- end meta -->
-                            </div><!-- end blog-box -->
+                        <h2 class="widget-title" style="color: #009EE5;">THỂ LOẠI</h2>
+                        <ul>
+                            @foreach($theloai as $tl)
+                            <li class="list-group-item"><a style="font-size: 20px;" href="">{{$tl->Ten}}</a></li>
+                            @endforeach
+                        </ul>
 
-                            <hr class="invis">
-
-                            <div class="blog-box">
-                                <div class="post-media">
-                                    <a href="tech-single.html" title="">
-                                        <img src="upload/tech_video_02.jpg" alt="" class="img-fluid">
-                                        <div class="hovereffect">
-                                            <span class="videohover"></span>
-                                        </div><!-- end hover -->
-                                    </a>
-                                </div><!-- end media -->
-                                <div class="blog-meta">
-                                    <h4><a href="tech-single.html" title="">We are guests of ABC Design Studio - Vlog</a></h4>
-                                </div><!-- end meta -->
-                            </div><!-- end blog-box -->
-
-                            <hr class="invis">
-
-                            <div class="blog-box">
-                                <div class="post-media">
-                                    <a href="tech-single.html" title="">
-                                        <img src="upload/tech_video_03.jpg" alt="" class="img-fluid">
-                                        <div class="hovereffect">
-                                            <span class="videohover"></span>
-                                        </div><!-- end hover -->
-                                    </a>
-                                </div><!-- end media -->
-                                <div class="blog-meta">
-                                    <h4><a href="tech-single.html" title="">Both blood pressure monitor and intelligent clock</a></h4>
-                                </div><!-- end meta -->
-                            </div><!-- end blog-box -->
-                        </div><!-- end videos -->
+                        <!-- </div>end blog-box -->
+                        <hr class="invis">
                     </div><!-- end widget -->
 
                     <div class="widget">
-                        <h2 class="widget-title">Popular Posts</h2>
+                        <h2 class="widget-title" style="color: #009EE5;">TIN HOT</h2>
                         <div class="blog-list-widget">
                             <div class="list-group">
+                                @foreach ($tinhot as $th)
                                 <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="w-100 justify-content-between">
-                                        <img src="upload/tech_blog_08.jpg" alt="" class="img-fluid float-left">
-                                        <h5 class="mb-1">5 Beautiful buildings you need..</h5>
-                                        <small>12 Jan, 2016</small>
+                                        <img src="images/{{$th->Hinh}}" alt="" class="img-fluid float-left">
+                                        <h5 class="mb-1">{{$th->TieuDe}}</h5>
+                                        <small>{{ $th->created_at->format('d-m-Y') }}</small>
                                     </div>
                                 </a>
+                                @endforeach
 
-                                <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                    <div class="w-100 justify-content-between">
-                                        <img src="upload/tech_blog_01.jpg" alt="" class="img-fluid float-left">
-                                        <h5 class="mb-1">Let's make an introduction for..</h5>
-                                        <small>11 Jan, 2016</small>
-                                    </div>
-                                </a>
 
-                                <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                    <div class="w-100 last-item justify-content-between">
-                                        <img src="upload/tech_blog_03.jpg" alt="" class="img-fluid float-left">
-                                        <h5 class="mb-1">Did you see the most beautiful..</h5>
-                                        <small>07 Jan, 2016</small>
-                                    </div>
-                                </a>
+
                             </div>
                         </div><!-- end blog-list -->
                     </div><!-- end widget -->
 
                     <div class="widget">
-                        <h2 class="widget-title">Recent Reviews</h2>
+                        <h2 class="widget-title" style="color: #009EE5;">ĐÁNH GIÁ GẦN ĐÂY</h2>
                         <div class="blog-list-widget">
                             <div class="list-group">
                                 <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="w-100 justify-content-between">
                                         <img src="upload/tech_blog_02.jpg" alt="" class="img-fluid float-left">
-                                        <h5 class="mb-1">Banana-chip chocolate cake recipe..</h5>
+                                        <h5 class="mb-1">Rất trực quan và dễ theo dõi, không bị bỏ lở</h5>
                                         <span class="rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -212,7 +162,7 @@
                                 <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="w-100 justify-content-between">
                                         <img src="upload/tech_blog_03.jpg" alt="" class="img-fluid float-left">
-                                        <h5 class="mb-1">10 practical ways to choose organic..</h5>
+                                        <h5 class="mb-1">Hữu ích và rất chính xác, không thiên vị</h5>
                                         <span class="rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
@@ -226,7 +176,7 @@
                                 <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="w-100 last-item justify-content-between">
                                         <img src="upload/tech_blog_07.jpg" alt="" class="img-fluid float-left">
-                                        <h5 class="mb-1">We are making homemade ravioli..</h5>
+                                        <h5 class="mb-1">Tại sao tôi không biết đến trang báo này sớm hớn</h5>
                                         <span class="rating">
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
