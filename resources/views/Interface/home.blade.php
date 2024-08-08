@@ -126,7 +126,7 @@
                         <div class="blog-list-widget">
                             <div class="list-group">
                                 @foreach ($tinhot as $th)
-                                <a href="tech-single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <a href="news/{{$th->id}}" class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="w-100 justify-content-between">
                                         <img src="images/{{$th->Hinh}}" alt="" class="img-fluid float-left">
                                         <h5 class="mb-1">{{$th->TieuDe}}</h5>

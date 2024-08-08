@@ -1,4 +1,5 @@
-@extends("Interface.layouts.header")
+@extends("Interface.layouts.layout")
+@section('content')
 
 <head>
     <style>
@@ -194,11 +195,11 @@
     <div id="body" style="margin:170px 0;">
         <div id="box">
             <form method="post">
-                <h1 style="width: 100%; text-align: center;letter-spacing: 2px;">REGISTER TO JOIN WITH US</h1>
+                <h1 style="width: 100%; text-align: center;letter-spacing: 2px;">ĐĂNG KÍ ĐỂ THAM GIA CÙNG VỚI CHÚNG TÔI</h1>
                 <div class="txt_field">
                     <input type="text" id="" style="background-color: transparent;color: #000; font-size: 20px;" required>
                     <span></span>
-                    <label for="">Username</label>
+                    <label for="">Tên Đăng Nhập</label>
                 </div>
                 <div class="txt_field">
                     <input type="text" style="background-color: transparent;color: #000; font-size: 20px;" required>
@@ -209,24 +210,24 @@
                 <div class="txt_field">
                     <input type="text" style="background-color: transparent;color: #000; font-size: 20px;" required>
                     <span></span>
-                    <label for="">Phone Number</label>
+                    <label for="">Số Điện Thoại </label>
                 </div>
                 <div class="txt_field">
                     <input type="password" id="passwordField" style="background-color: transparent;color: #000; font-size: 20px;" required>
                     <span class="togglePassword" onclick="anHienMk()"></span>
-                    <label for="">Password</label>
+                    <label for="">Mật Khẩu</label>
                 </div>
                 <div class="txt_field">
                     <input type="text" style="background-color: transparent;color: #000; font-size: 20px;" required>
                     <span class="togglePassword" onclick="anHienMk()"></span>
-                    <label for="">Confirm Password</label>
+                    <label for="">Xác Nhận Mật Khẩu</label>
                 </div>
                 <div id="box-button"><input class="input" type="submit" value="Register"></div>
                 <div class="signup_link">
-                    Not a member ? <a href="">Sign Up Now</a>
+                    Đã là thành viên ? <a href="">Đăng Nhập Ngay<a>
                 </div>
             </form>
         </div>
     </div>
 </body>
-@extends("Interface.layouts.footer")
+@endsection

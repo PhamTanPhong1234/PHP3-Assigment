@@ -1,5 +1,5 @@
-@extends("Interface.layouts.header")
-
+@extends("Interface.layouts.layout")
+@section('content')
 <head>
     <style>
         * {
@@ -211,8 +211,8 @@
                     Not a member ? <a href="{{ route('register') }}">Register now</a>
                 </div>
             </form>
-            @extends("Interface.layouts.footer")
             </div>
     </div>
 
 </body>
+@endsection
