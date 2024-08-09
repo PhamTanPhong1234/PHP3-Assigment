@@ -9,7 +9,7 @@
 </div>
 @endif
 @if(session('thongbao'))
-<div class="alert alert-success">
+<div class="alert alert-warning">
     {{session('thongbao')}}
 </div>
 @endif

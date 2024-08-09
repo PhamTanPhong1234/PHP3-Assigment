@@ -1,64 +1,40 @@
 @extends('Interface.layouts.layout')
 @section('content')
-<section class="section first-section">
-    <div class="container-fluid">
-        <div class="masonry-blog clearfix">
-            <div class="first-slot">
-                <div class="masonry-box post-media" width="788px" height="433px">
-                    <img src="upload/banner_01.jpg" alt="" class="img-fluid">
-                    <div class="shadoweffect">
-                        <div class="shadow-desc">
-                            <div class="blog-meta">
-                                <span class="bg-orange"><a href="tech-category-01.html" title="">Thời Sự</a></span>
-                                <h4><a href="news/66" title="">Chủ tịch nước Tô Lâm nhận chức Tổng bí thư Đảng Cộng sản Việt Nam</a></h4>
-                                <small><a href="tech-single.html" title="">24 July, 2017</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end shadow-desc -->
-                    </div><!-- end shadow -->
-                </div><!-- end post-media -->
-            </div><!-- end first-side -->
 
-            <div class="second-slot">
-                <div class="masonry-box post-media">
-                    <img src="upload/bxj7l197.png" alt="" class="img-fluid">
-                    <div class="shadoweffect">
-                        <div class="shadow-desc">
-                            <div class="blog-meta">
-                                <span class="bg-orange"><a href="tech-category-01.html" title="">Chính Trị</a></span>
-                                <h4><a href="news/67" title="">Ông Donald Trump bị bắn trong sự kiện tranh cử</a></h4>
-                                <small><a href="tech-single.html" title="">03 July, 2017</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end shadow-desc -->
-                    </div><!-- end shadow -->
-                </div><!-- end post-media -->
-            </div><!-- end second-side -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+            <h2><i class="fa fa-star bg-orange"></i> Hot News<small class="hidden-xs-down hidden-sm-down">Nulla felis eros, varius sit amet volutpat non. </small></h2>
+        </div><!-- end col -->
+        <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Blog</a></li>
+                <li class="breadcrumb-item active">Reviews</li>
+            </ol>
+        </div><!-- end col -->
+    </div><!-- end row -->
+</div><!-- end container -->
+</div><!-- end page-title -->
 
-            <div class="last-slot">
-                <div class="masonry-box post-media">
-                    <img src="upload/vw5h6tpr.png" alt="" class="img-fluid">
-                    <div class="shadoweffect">
-                        <div class="shadow-desc">
-                            <div class="blog-meta">
-                                <span class="bg-orange"><a href="tech-category-01.html" title="">Thời Tiết</a></span>
-                                <h4><a href="news/68" title="">Thời tiết miền Bắc đổ mưa, nhiều tuyến phố ngập lớn</a></h4>
-                                <small><a href="tech-single.html" title="">01 July, 2017</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end shadow-desc -->
-                    </div><!-- end shadow -->
-                </div><!-- end post-media -->
-            </div><!-- end second-side -->
-        </div><!-- end masonry -->
-    </div>
-</section>
 <section class="section">
     <div class="container">
         <div class="row">
             <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                 <div class="page-wrapper">
-                    <div class="blog-top clearfix">
-                        <h4 class="pull-left">TIN MỚI NHẤT<a href="#"><i class="fa fa-rss"></i></a></h4>
-                    </div><!-- end blog-top -->
+                <h1 style="float: left;font-size: 50px; color: red;">Tin Tức</h1>
 
+                    <form class="d-flex justify-content-end align-items-center" method="POST" action="/postcategory">
+                        <div class="form-group mb-2 flex-grow-1"><input type="hidden" name="_token" value="{{csrf_token()}}">
+                            <select class="form-select" name="theloai_id" aria-label="Default select example" style='padding: 11px 24px;margin-right:15px ;'>
+                                <option selected value="0">Chọn Thể Loại</option>
+                                @foreach($theloai as $tl)
+                                <option value="{{$tl->id}}">{{$tl->Ten}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2 me-2">Tìm</button>
+                    </form>
                     <div class="blog-list clearfix">
 
                         @foreach ($tintuc as $tt )
@@ -84,8 +60,13 @@
                         </div><!-- end blog-box -->
                         @endforeach
                     </div>
+                </div><!-- end page-wrapper -->
+
+                <hr class="invis">
+
+                <div class="row">
                     <div class="col-md-12">
-                        <nav aria-label="Page navigation">
+                    <nav aria-label="Page navigation">
                             {{$tintuc->links()}}
                         </nav>
                     </div><!-- end col -->
@@ -95,25 +76,46 @@
             <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                 <div class="sidebar">
                     <div class="widget">
+                        <h2 class="widget-title">Follow Us</h2>
+
+                        <div class="row text-center">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <a href="#" class="social-button facebook-button">
+                                    <i class="fa fa-facebook"></i>
+                                    <p>27k</p>
+                                </a>
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <a href="#" class="social-button twitter-button">
+                                    <i class="fa fa-twitter"></i>
+                                    <p>98k</p>
+                                </a>
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <a href="#" class="social-button google-button">
+                                    <i class="fa fa-google-plus"></i>
+                                    <p>17k</p>
+                                </a>
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <a href="#" class="social-button youtube-button">
+                                    <i class="fa fa-youtube"></i>
+                                    <p>22k</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div><!-- end widget -->
+
+                    <div class="widget">
                         <div class="banner-spot clearfix">
                             <div class="banner-img">
                                 <img src="https://photo-cms-kienthuc.epicdn.me/w730/Uploaded/2022/afsgy/2022_12_07/trinh-ba-quat-ha-noi-864.jpg" alt="" class="img-fluid">
                             </div><!-- end banner-img -->
                         </div><!-- end banner -->
                     </div><!-- end widget -->
-
-                    <div class="widget">
-                        <h2 class="widget-title" style="color: #009EE5;">THỂ LOẠI</h2>
-                        <ul>
-                            @foreach($theloai as $tl)
-                            <li class="list-group-item"><a style="font-size: 20px;" href="category/{{$tl->id}}">{{$tl->Ten}}</a></li>
-                            @endforeach
-                        </ul>
-
-                        <!-- </div>end blog-box -->
-                        <hr class="invis">
-                    </div><!-- end widget -->
-
                     <div class="widget">
                         <h2 class="widget-title" style="color: #009EE5;">TIN HOT</h2>
                         <div class="blog-list-widget">
@@ -181,40 +183,6 @@
                                 </a>
                             </div>
                         </div><!-- end blog-list -->
-                    </div><!-- end widget -->
-
-                    <div class="widget">
-                        <h2 class="widget-title">Follow Us</h2>
-
-                        <div class="row text-center">
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                <a href="#" class="social-button facebook-button">
-                                    <i class="fa fa-facebook"></i>
-                                    <p>27k</p>
-                                </a>
-                            </div>
-
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                <a href="#" class="social-button twitter-button">
-                                    <i class="fa fa-twitter"></i>
-                                    <p>98k</p>
-                                </a>
-                            </div>
-
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                <a href="#" class="social-button google-button">
-                                    <i class="fa fa-google-plus"></i>
-                                    <p>17k</p>
-                                </a>
-                            </div>
-
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                <a href="#" class="social-button youtube-button">
-                                    <i class="fa fa-youtube"></i>
-                                    <p>22k</p>
-                                </a>
-                            </div>
-                        </div>
                     </div><!-- end widget -->
 
                     <div class="widget">

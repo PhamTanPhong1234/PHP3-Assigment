@@ -1,5 +1,6 @@
 @extends("Interface.layouts.layout")
 @section('content')
+
 <head>
     <style>
         * {
@@ -193,15 +194,18 @@
 
     <div id="body" style="margin-top: 170px;">
         <div id="box">
-            <form method="post">
+            <form method="post" action="/login">
+                <input type="hidden" name="_token" value="{{csrf_token()}}" >
                 <h1 style="width: 100%; text-align: center;letter-spacing: 2px;">LOGIN TO DISCOVER</h1>
+
                 <div class="txt_field">
-                    <input type="text" id="" style="background-color: transparent; color: #000; font-size: 20px;" required>
+
+                    <input type="email" name="email" style="background-color: transparent; color: #000; font-size: 20px;" required>
                     <span></span>
-                    <label for="">User</label>
+                    <label for="">Email</label>
                 </div>
                 <div class="txt_field">
-                    <input type="password" id="passwordField" style="background-color: transparent;color: #000; font-size: 20px;" required>
+                    <input type="password" name="password" id="passwordField" style="background-color: transparent;color: #000; font-size: 20px;" required>
                     <span class="togglePassword" onclick="anHienMk()"></span>
                     <label for="">Password</label>
                 </div>
@@ -211,7 +215,19 @@
                     Not a member ? <a href="{{ route('register') }}">Register now</a>
                 </div>
             </form>
+            @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                @foreach ($errors->all() as $err )
+                {{$err}} <br>
+                @endforeach
             </div>
+            @endif
+            @if(session('thongbao'))
+            <div class="alert alert-success">
+                {{session('thongbao')}}
+            </div>
+            @endif
+        </div>
     </div>
 
 </body>

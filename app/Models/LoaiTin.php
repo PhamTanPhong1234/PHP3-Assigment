@@ -16,6 +16,6 @@ class LoaiTin extends Model
 
     public function tintuc()
     {
-        return $this->hasMany('App\Model\TinTuc', 'idLoaiTin', 'id');
+        return $this->hasMany('App\Models\TinTuc', 'idLoaiTin', 'id');
     }
 }

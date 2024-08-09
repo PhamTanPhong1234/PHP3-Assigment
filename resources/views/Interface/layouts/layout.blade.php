@@ -67,10 +67,10 @@
                                 <a class="nav-link" href="/" style="font-size: 20px;">Trang Chủ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/hot-news" style="font-size: 20px;">Thể Loại</a>
+                                <a class="nav-link" href="/news" style="font-size: 20px;">Thể Loại</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/news" style="font-size: 20px;">Tin Tức</a>
+                                <a class="nav-link" href="/video" style="font-size: 20px;">Video</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/contact-us" style="font-size: 20px;">Liên Hệ</a>
@@ -80,9 +80,15 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#" style="font-size: 20px;"><i class="fa fa-search"></i></a>
                             </li>
+                            @if (!isset($nguoidung))
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('login')}}" style="font-size: 20px;"><i class="fa fa-user"></i></a>
                             </li>
+                            @else
+                            <li class="nav-item">
+                                <p>Chào mừng {{$nguoidung->Ten}} <img src="{{asset('images/'. $nguoidung->Hinh)}}" class="avatar rounded-circle" alt=""></p>
+                            </li>
+                            @endif
                             <li class="nav-item">
                         </ul>
                     </div>

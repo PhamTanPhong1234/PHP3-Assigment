@@ -10,4 +10,10 @@ use Illuminate\Support\Facades\Auth;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
+    public function __construct()
+    {
+        if (Auth::check()) {
+            view()->share('nguoidung', Auth::user());
+        }
+    }
 }

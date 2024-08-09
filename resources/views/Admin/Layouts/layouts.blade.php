@@ -65,6 +65,9 @@ font-size: 16px;"><a href="" class="btn btn-danger square-btn-adjust">Quay Về 
                         <a href="{{url('Admin/danhmuc/the-loai')}}"><i class="fa fa-table fa-3x"></i> Quản Lý Thể Loại</a>
                     </li>
                     <li>
+                        <a href="{{url('Admin/lienhe/danhsach')}}"><i class="fa fa-table fa-3x"></i> Danh Sách Liên Hệ</a>
+                    </li>
+                    <li>
                         <a href="{{url('Admin/danhmuc/loai-tin')}}"><i class="fa fa-table fa-3x"></i> Quản Lý Loai Tin</a>
                     </li>
                     <li>
@@ -108,12 +111,12 @@ font-size: 16px;"><a href="" class="btn btn-danger square-btn-adjust">Quay Về 
     <script>
         $(document).ready(function() {
             $('#summernote').summernote({
-                height: 100,   // Đặt chiều cao của trình soạn thảo
+                height: 100, // Đặt chiều cao của trình soạn thảo
             });
         });
         $(document).ready(function() {
             $('#summernote-content').summernote({
-                height: 500,   // Đặt chiều cao của trình soạn thảo
+                height: 500, // Đặt chiều cao của trình soạn thảo
             });
         });
     </script>

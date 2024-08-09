@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\LienHe;
 use Illuminate\Support\Facades\Auth;
 class UsersController extends Controller
 {
@@ -127,4 +128,14 @@ class UsersController extends Controller
         return redirect('Admin/dang-nhap');
 
     }
+    function danhsachLienhe(){
+        $lienHes = LienHe::all();
+        return view('Admin/LienHe/xem', ['lienHes' => $lienHes]);
+    }
+    function xoaLienHe($id){
+        $lienHe = LienHe::find($id);
+        $lienHe->delete();
+        return redirect('Admin/lienhe/danhsach')->with('thongbao', 'Xóa thành công.');
+    }
+
 }
