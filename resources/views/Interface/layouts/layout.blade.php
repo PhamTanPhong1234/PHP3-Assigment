@@ -80,13 +80,14 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#" style="font-size: 20px;"><i class="fa fa-search"></i></a>
                             </li>
-                            @if (!isset($nguoidung))
+                            @if (!isset($nd))
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('login')}}" style="font-size: 20px;"><i class="fa fa-user"></i></a>
                             </li>
+                            <!-- <h5>lỗi</h5> -->
                             @else
                             <li class="nav-item">
-                                <p>Chào mừng {{$nguoidung->Ten}} <img src="{{asset('images/'. $nguoidung->Hinh)}}" class="avatar rounded-circle" alt=""></p>
+                                <p>Chào mừng {{$nd->Ten}} <img src="{{asset('images/'. $nd->Hinh)}}" class="avatar rounded-circle" alt=""></p>
                             </li>
                             @endif
                             <li class="nav-item">
