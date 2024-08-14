@@ -34,12 +34,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">ViEnTech</a>
+                <a class="navbar-brand" href="index.html"><img src="{{asset('images/version/tech-logo.png')}}" alt=""></a>
             </div>
             <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"><a href="/" class="btn btn-danger square-btn-adjust">Quay Về Trang Người Dùng</a> </div>
+font-size: 16px;"><a href="/" class="btn btn-danger square-btn-adjust">Quay Về Trang Người Dùng</a>
+<a href="{{route('logout')}}" class="btn btn-danger square-btn-adjust">Đăng Xuất</a> </div>
 
         </nav>
         <!-- /. NAV TOP  -->
@@ -71,9 +72,7 @@ font-size: 16px;"><a href="/" class="btn btn-danger square-btn-adjust">Quay Về
                     <li>
                         <a href="{{url('Admin/danhmuc/loai-tin')}}"><i class="fa fa-table fa-3x"></i> Quản Lý Loai Tin</a>
                     </li>
-                    <li>
-                        <a href="{{route('logout')}}"><i class="fa fa-edit fa-3x"></i>Log Out</a>
-                    </li>
+                    
                 </ul>
 
             </div>

@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class LoaiTin extends Model
 {
-
     protected $table = 'LoaiTin';
     public function theloai()
     {

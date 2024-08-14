@@ -104,7 +104,7 @@ class interfaceController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect('/');
         } else {
-            return redirect('/login')->with('thongbao', 'Sai mật khẩu ');
+            return redirect('/login')->with('loi', 'Sai mật khẩu ');
         }
     }
     function dangxuat(){

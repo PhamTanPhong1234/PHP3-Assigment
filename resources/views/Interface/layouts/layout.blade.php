@@ -118,7 +118,7 @@
                             <!-- <h5>lỗi</h5> -->
                             <li class="nav-item" style="position: relative;">
                                 <h5 style="background-color: white; padding: 5px 10px; border-radius: 5px; color: black;">
-                                    {{$nd->name}}
+                                    {{$nd->name}} &nbsp 
                                     <img src="{{asset('images/'. $nd->Hinh)}}" class="avatar rounded-circle border-cyan" width="30px" alt="">
                                     <i class="fa-solid fa-caret-down"></i>
                                 </h5>
@@ -130,7 +130,7 @@
                             @elseif (isset($nd) && $nd->level == 1)
                             <li class="nav-item" style="position: relative;">
                                 <h5 style="background-color: white; padding: 5px 10px; border-radius: 5px; color: black;">
-                                    {{$nd->name}}
+                                    {{$nd->name}}  &nbsp
                                     <img src="{{asset('images/'. $nd->Hinh)}}" class="avatar rounded-circle border-cyan" width="30px" alt="">
                                     <i class="fa-solid fa-caret-down"></i>
                                 </h5>

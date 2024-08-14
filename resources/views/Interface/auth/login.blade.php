@@ -210,6 +210,11 @@
                     {{session('thongbao')}}
                 </div>
                 @endif
+                @if(session('loi'))
+                <div class="alert alert-danger">
+                    {{session('loi')}}
+                </div>
+                @endif
                 <div class="txt_field">
 
                     <input type="email" name="email" style="background-color: transparent; color: #000; font-size: 20px;" required>
