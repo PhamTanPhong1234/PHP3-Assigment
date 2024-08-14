@@ -194,10 +194,22 @@
 
     <div id="body" style="margin-top: 170px;">
         <div id="box">
-            <form method="post" action="/login">
-                <input type="hidden" name="_token" value="{{csrf_token()}}" >
-                <h1 style="width: 100%; text-align: center;letter-spacing: 2px;">LOGIN TO DISCOVER</h1>
 
+            <form method="post" action="/login">
+                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                <h1 style="width: 100%; text-align: center;letter-spacing: 2px;">LOGIN TO DISCOVER</h1>
+                @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    @foreach ($errors->all() as $err )
+                    {{$err}} <br>
+                    @endforeach
+                </div>
+                @endif
+                @if(session('thongbao'))
+                <div class="alert alert-success">
+                    {{session('thongbao')}}
+                </div>
+                @endif
                 <div class="txt_field">
 
                     <input type="email" name="email" style="background-color: transparent; color: #000; font-size: 20px;" required>
@@ -215,18 +227,7 @@
                     Not a member ? <a href="{{ route('register') }}">Register now</a>
                 </div>
             </form>
-            @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                @foreach ($errors->all() as $err )
-                {{$err}} <br>
-                @endforeach
-            </div>
-            @endif
-            @if(session('thongbao'))
-            <div class="alert alert-success">
-                {{session('thongbao')}}
-            </div>
-            @endif
+
         </div>
     </div>
 

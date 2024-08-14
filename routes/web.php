@@ -8,7 +8,7 @@ use App\Http\Controllers\LoaiTinController;
 use App\Http\Controllers\TheloaiController;
 use App\Http\Controllers\interfaceController;
 use App\Models\LoaiTin;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +24,8 @@ Route::get('Admin/dang-nhap', [UsersController::class, 'dangnhapAdmin']);
 Route::post('Admin/dang-nhap', [UsersController::class, 'postdangnhapAdmin']);
 Route::group(['prefix' => 'Admin', 'middleware' => 'AdminLogin'], function () {
     Route::get('dashboard', function () {
-        return view('Admin/dashboard');
+        $nd = Auth::user();
+        return view('Admin/dashboard',["nd" => $nd] );
     });
     Route::get('/logout', [UsersController::class, 'dangxuatAdmin'])->name('logout');
 
@@ -61,9 +62,6 @@ Route::group(['prefix' => 'Admin', 'middleware' => 'AdminLogin'], function () {
     });
 });
 
-Route::get('/', function () {
-    return view('Interface/home');
-});
 Route::get('/', [interfaceController::class, 'index'])->name('index');
 Route::get('/video', [interfaceController::class, 'video']);
 Route::get('/category/{id}', [InterfaceController::class, 'category']);
@@ -74,4 +72,6 @@ Route::get('/news/{id}', [interfaceController::class, 'view']);
 Route::get('/news', [interfaceController::class, 'news'])->name('news');
 Route::get('/login', [interfaceController::class, 'login'])->name('login');
 Route::post('/login', [interfaceController::class, 'postlogin']);
+Route::get('/dang-xuat', [interfaceController::class, 'dangxuat']);
 Route::get('/register', [interfaceController::class, 'register'])->name('register');
+Route::post('/dang-ki', [interfaceController::class, 'dangki']);

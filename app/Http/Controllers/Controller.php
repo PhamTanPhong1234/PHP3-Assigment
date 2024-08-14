@@ -12,9 +12,11 @@ class Controller extends BaseController
     use AuthorizesRequests, ValidatesRequests;
     public function __construct()
     {
-        if (Auth::check() ) {
-            view()->share('nd', Auth::user());
-        }
-        
+        $this->middleware(function ($request, $next) {
+            if (Auth::check()) {
+                view()->share('nd', Auth::user());
+            }
+            return $next($request);
+        });
     }
 }

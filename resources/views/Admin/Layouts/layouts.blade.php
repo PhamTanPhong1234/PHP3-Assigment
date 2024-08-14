@@ -39,7 +39,7 @@
             <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"><a href="" class="btn btn-danger square-btn-adjust">Quay Về Trang Người Dùng</a> </div>
+font-size: 16px;"><a href="/" class="btn btn-danger square-btn-adjust">Quay Về Trang Người Dùng</a> </div>
 
         </nav>
         <!-- /. NAV TOP  -->
@@ -47,7 +47,8 @@ font-size: 16px;"><a href="" class="btn btn-danger square-btn-adjust">Quay Về 
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li class="text-center">
-                        <img src="{{asset('admin/img/find_user.png')}}" class="user-image img-responsive" />
+                        <img src="{{asset('images/'. $nd->Hinh)}}" class="user-image img-responsive" width="150px" />
+                        <h3 style="font-weight: 700; background-color: #fff;padding: 10px;">{{$nd->name}}</h3>
                     </li>
                     <li>
                         <a href="{{url('Admin/dashboard')}}"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>

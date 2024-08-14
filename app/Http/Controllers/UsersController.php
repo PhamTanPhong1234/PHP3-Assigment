@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\LienHe;
 use Illuminate\Support\Facades\Auth;
+
 class UsersController extends Controller
 {
+
     function xemNguoiDung()
     {
         $nguoidung = User::paginate(10);
@@ -67,14 +69,13 @@ class UsersController extends Controller
 
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required|unique:users,email',
+            'email' => 'required|',
             'password' => 'required|min:8',
             'phone' => 'required|numeric',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ], [
             'name.required' => 'Vui lòng nhập tên',
             'email.required' => 'Vui lòng nhập email',
-            'email.unique' => 'Email đã tồn tại',
             'password.required' => 'Vui lòng nhập mật khẩu',
             'password.min' => 'Mật khẩu ít nhất phải 8 kí tự',
             'phone.required' => 'Vui lòng nhập số điện thoại',
@@ -94,7 +95,11 @@ class UsersController extends Controller
         $nguoidung->phone = $request->phone;
         $nguoidung->level = $request->level;
         $nguoidung->password = $request->password;
-        $nguoidung->Hinh = $data['image'];
+        if (isset($data['image'])) {
+            $nguoidung->Hinh = $data['image'];
+        } else {
+            $nguoidung->Hinh = "avatar.jpg";
+        }
         $nguoidung->update();
         return redirect('Admin/nguoidung/xem-nguoi-dung')->with('thongbao', 'Sửa người dùng thành công.');
     }
@@ -119,23 +124,24 @@ class UsersController extends Controller
         ]);
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect('Admin/dashboard');
-        }else{
-            return redirect('Admin/dang-nhap')->with('thongbao','Sai mật khẩu ');
+        } else {
+            return redirect('Admin/dang-nhap')->with('thongbao', 'Sai mật khẩu ');
         }
     }
-    function dangxuatAdmin(){
+    function dangxuatAdmin()
+    {
         Auth::logout();
         return redirect('Admin/dang-nhap');
-
     }
-    function danhsachLienhe(){
+    function danhsachLienhe()
+    {
         $lienHes = LienHe::all();
         return view('Admin/LienHe/xem', ['lienHes' => $lienHes]);
     }
-    function xoaLienHe($id){
+    function xoaLienHe($id)
+    {
         $lienHe = LienHe::find($id);
         $lienHe->delete();
         return redirect('Admin/lienhe/danhsach')->with('thongbao', 'Xóa thành công.');
     }
-
 }

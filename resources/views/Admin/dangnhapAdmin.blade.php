@@ -53,7 +53,8 @@
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Login</button>
             </form>
-        </div>
+            <hr>
+            <a href="/"> <i class="fa-solid fa-angle-left"></i>Quay về trang chủ</a>
     </div>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -46,6 +46,39 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 <style>
+    .user-info-dropdown-XYZ {
+        display: none;
+        position: absolute;
+        top: 90%;
+        right: 0px;
+        /* Đặt ngay dưới thẻ cha */
+        background-color: white;
+        width: 170px;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-item:hover .user-info-dropdown-XYZ {
+        display: block;
+    }
+
+    
+    .user-info-dropdown-XYZ a {
+        margin: 0;
+        padding: 10px 0;
+        color: black;
+        text-decoration: none;
+        transition: 0.2s;
+    }
+
+    .user-info-dropdown-XYZ a:hover {
+        text-decoration: underline;
+        color:#00A6E5 ;
+    }
+</style>
+<style>
     html {
         font-family: "Afacad", sans-serif;
     }
@@ -80,17 +113,38 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#" style="font-size: 20px;"><i class="fa fa-search"></i></a>
                             </li>
-                            @if (!isset($nd))
+                            @if (isset($nd) && $nd->level == 0)
+
+                            <!-- <h5>lỗi</h5> -->
+                            <li class="nav-item" style="position: relative;">
+                                <h5 style="background-color: white; padding: 5px 10px; border-radius: 5px; color: black;">
+                                    {{$nd->name}}
+                                    <img src="{{asset('images/'. $nd->Hinh)}}" class="avatar rounded-circle border-cyan" width="30px" alt="">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </h5>
+                                <div class="user-info-dropdown-XYZ">
+                                    <a href="#"><i class="fa-solid fa-user"></i>  Thông tin tài khoản</a> <br>
+                                    <a href="/dang-xuat"><i class="fa-solid fa-right-from-bracket"></i>  Đăng xuất</a>
+                                </div>
+                            </li>
+                            @elseif (isset($nd) && $nd->level == 1)
+                            <li class="nav-item" style="position: relative;">
+                                <h5 style="background-color: white; padding: 5px 10px; border-radius: 5px; color: black;">
+                                    {{$nd->name}}
+                                    <img src="{{asset('images/'. $nd->Hinh)}}" class="avatar rounded-circle border-cyan" width="30px" alt="">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </h5>
+                                <div class="user-info-dropdown-XYZ">
+                                    <a href="#"><i class="fa-solid fa-user"></i>  Thông tin tài khoản</a> <br>
+                                    <a href="/Admin/dashboard"><i class="fa-solid fa-gear"></i>  Quản Lý Admin</a> <br>
+                                    <a href="/dang-xuat"><i class="fa-solid fa-right-from-bracket"></i>  Đăng xuất</a>
+                                </div>
+                            </li>
+                            @else
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('login')}}" style="font-size: 20px;"><i class="fa fa-user"></i></a>
                             </li>
-                            <!-- <h5>lỗi</h5> -->
-                            @else
-                            <li class="nav-item">
-                                <p>Chào mừng {{$nd->Ten}} <img src="{{asset('images/'. $nd->Hinh)}}" class="avatar rounded-circle" alt=""></p>
-                            </li>
                             @endif
-                            <li class="nav-item">
                         </ul>
                     </div>
                 </nav>

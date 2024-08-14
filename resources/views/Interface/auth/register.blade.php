@@ -194,37 +194,53 @@
 
     <div id="body" style="margin:170px 0;">
         <div id="box">
-            <form method="post">
+
+            <form action="/dang-ki" method="post">
+                <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <h1 style="width: 100%; text-align: center;letter-spacing: 2px;">ĐĂNG KÍ ĐỂ THAM GIA CÙNG VỚI CHÚNG TÔI</h1>
+                @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    @foreach ($errors->all() as $err )
+                    {{$err}} <br>
+                    @endforeach
+                </div>
+                @endif
+                @if(session('thongbao'))
+                <div class="alert alert-danger">
+                    {{session('thongbao')}}
+                </div>
+                @endif  
                 <div class="txt_field">
-                    <input type="text" id="" style="background-color: transparent;color: #000; font-size: 20px;" required>
+                    <input type="text" id="" name="name" style="background-color: transparent;color: #000; font-size: 20px;" required>
                     <span></span>
-                    <label for="">Tên Đăng Nhập</label>
+                    <label for="">Tên Người Dùng</label>
                 </div>
                 <div class="txt_field">
-                    <input type="text" style="background-color: transparent;color: #000; font-size: 20px;" required>
+                    <input type="email" name="email" style="background-color: transparent;color: #000; font-size: 20px;" required>
                     <span></span>
                     <label for="">Email</label>
 
                 </div>
                 <div class="txt_field">
-                    <input type="text" style="background-color: transparent;color: #000; font-size: 20px;" required>
+                    <input type="text" name="phone" style="background-color: transparent;color: #000; font-size: 20px;" required>
                     <span></span>
                     <label for="">Số Điện Thoại </label>
                 </div>
                 <div class="txt_field">
-                    <input type="password" id="passwordField" style="background-color: transparent;color: #000; font-size: 20px;" required>
+                    <input type="password" name="password" id="passwordField" style="background-color: transparent;color: #000; font-size: 20px;" required>
                     <span class="togglePassword" onclick="anHienMk()"></span>
                     <label for="">Mật Khẩu</label>
                 </div>
                 <div class="txt_field">
-                    <input type="text" style="background-color: transparent;color: #000; font-size: 20px;" required>
+                    <input type="password" name="cfpass" style="background-color: transparent;color: #000; font-size: 20px;" required>
                     <span class="togglePassword" onclick="anHienMk()"></span>
                     <label for="">Xác Nhận Mật Khẩu</label>
                 </div>
-                <div id="box-button"><input class="input" type="submit" value="Register"></div>
+                <input type="hidden" name="level" value="0">
+                <input type="hidden" name="hinh" value="avatar.jpg">
+                <div id="box-button"><input class="input" type="submit" value="Đăng Kí"></div>
                 <div class="signup_link">
-                    Đã là thành viên ? <a href="">Đăng Nhập Ngay<a>
+                    Đã là thành viên ? <a href="/login">Đăng Nhập Ngay<a>
                 </div>
             </form>
         </div>

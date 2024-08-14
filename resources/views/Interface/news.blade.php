@@ -1,28 +1,28 @@
 @extends('Interface.layouts.layout')
 @section('content')
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-            <h2><i class="fa fa-star bg-orange"></i> Hot News<small class="hidden-xs-down hidden-sm-down">Nulla felis eros, varius sit amet volutpat non. </small></h2>
-        </div><!-- end col -->
-        <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Blog</a></li>
-                <li class="breadcrumb-item active">Reviews</li>
-            </ol>
-        </div><!-- end col -->
-    </div><!-- end row -->
-</div><!-- end container -->
+<div class="page-title lb single-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <h2><i class="fa fa-star bg-orange"></i> Thể Loại Tin<small class="hidden-xs-down hidden-sm-down">Mọi thể loại xung quanh đời sống Việt Nam </small></h2>
+            </div><!-- end col -->
+            <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
+                    <li class="breadcrumb-item"><a href="#">Thể Loại</a></li>
+                </ol>
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
 </div><!-- end page-title -->
+
 
 <section class="section">
     <div class="container">
         <div class="row">
             <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                 <div class="page-wrapper">
-                <h1 style="float: left;font-size: 50px; color: red;">Tin Tức</h1>
+                    <h1 style="float: left;font-size: 50px; color: red;">Tin Tức</h1>
 
                     <form class="d-flex justify-content-end align-items-center" method="POST" action="/postcategory">
                         <div class="form-group mb-2 flex-grow-1"><input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -66,7 +66,7 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                    <nav aria-label="Page navigation">
+                        <nav aria-label="Page navigation">
                             {{$tintuc->links()}}
                         </nav>
                     </div><!-- end col -->
