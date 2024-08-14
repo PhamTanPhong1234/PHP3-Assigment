@@ -20,9 +20,12 @@
                             <small><a href="tech-single.html" title="">{{ $tintuc->created_at->format('d-m-Y') }}</a></small>
                             <small><a href="#" title=""><i class="fa fa-eye"></i> {{ $tintuc->SoLuotXem }}</a></small>
                         </div><!-- end meta -->
+
+                        <div style="text-align: justify; /* Căn chỉnh văn bản đều */
+    text-justify: inter-word; font-size: 25px; font-weight: bold; padding: 20px 0;">{{$tintuc->TomTat}}.</div>
                         <div style="text-align: justify; /* Căn chỉnh văn bản đều */
     text-justify: inter-word; font-size: 20px;">{!!$tintuc->NoiDung!!}</div>
-    <br>
+                        <br>
                         <hr>
                         <div class="post-sharing">
                             <ul class="list-inline">

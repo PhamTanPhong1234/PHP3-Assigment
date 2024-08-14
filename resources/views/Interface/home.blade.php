@@ -61,8 +61,7 @@
 
                     <div class="blog-list clearfix">
 
-                        @foreach ($tintuc as $tt )
-                        <hr class="invis">
+                        @foreach ($tintuc as $tt )  
                         <div class="blog-box row">
                             <div class="col-md-4">
                                 <div class="post-media">
@@ -81,7 +80,8 @@
 
                                 <small><a href="tech-single.html" title=""><i class="fa fa-eye"></i> {{$tt->SoLuotXem}}</a></small>
                             </div><!-- end meta -->
-                        </div><!-- end blog-box -->
+                        </div>
+                        <hr class="invis">
                         @endforeach
                     </div>
                     <div class="col-md-12">

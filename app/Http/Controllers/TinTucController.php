@@ -27,7 +27,7 @@ class TinTucController extends Controller
             'title' => 'required|min:3|unique:TinTuc,TieuDe',
             'titlekd' => 'required|min:3|unique:TinTuc,TieuDe',
             'LoaiTin' => 'required',
-            'descontent' => 'required|min:3|max:200',
+            'descontent' => 'required|min:3',
             'content' => 'required|min:50',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ], [
@@ -41,7 +41,6 @@ class TinTucController extends Controller
             'descontent.required' => 'Bạn chưa nhập nội dung mô tả !',
             'descontent.min' => 'Bạn chưa nhập đủ kí tự !',
             'descontent.unique' => 'Nội dung đã nhập trước đây rồi !',
-            'descontent.max' => 'Chỉ nhập trong giới hạn từ 3 - 200 từ !',
             'content.required' => 'Bạn chưa nhập nội dung !',
             'content.min' => 'Bạn chưa nhập đủ nội dung tối thiểu (50 từ) !',
             'image.mime' => 'Vui lòng tải ảnh đúng định dạng',
