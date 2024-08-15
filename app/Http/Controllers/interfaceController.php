@@ -22,7 +22,7 @@ class interfaceController extends Controller
     }
     function video()
     {
-        $theloai = TheLoai::take(10)->get();
+        $theloai = TheLoai::all();
         $tintuc = TinTuc::paginate(12);
         $tinhot = TinTuc::orderBy('SoLuotXem', 'desc')->take(5)->get();
         return view('Interface/video', ['tintuc' => $tintuc, 'theloai' => $theloai, 'tinhot' => $tinhot]);
@@ -33,21 +33,21 @@ class interfaceController extends Controller
     }
     function news()
     {
-        $theloai = TheLoai::take(10)->get();
+        $theloai = TheLoai::all();
         $tintuc = TinTuc::paginate(12);
         $tinhot = TinTuc::orderBy('SoLuotXem', 'desc')->take(5)->get();
         return view('Interface/news', ['tintuc' => $tintuc, 'theloai' => $theloai, 'tinhot' => $tinhot]);
     }
-    function view($id)
+    function view($location_name)
     {
-        $tintuc = TinTuc::find($id);
+        $tintuc = TinTuc::where('TieuDeKhongDau',$location_name)->first();
         return view('Interface/view', ['tintuc' => $tintuc]);
     }
-    function category($id)
+    function category($TenKhongDau)
     {
-        $theloai = TheLoai::take(10)->get();
+        $theloai = TheLoai::all();
         // $tentheloai = TheLoai::find($id);
-        $theloaitieude = TheLoai::with('LoaiTin.TinTuc')->find($id);
+        $theloaitieude = TheLoai::where('TenKhongDau', $TenKhongDau)->first();
         $tintuc = TinTuc::paginate(10);
         $tinhot = TinTuc::orderBy('SoLuotXem', 'desc')->take(5)->get();
         return view('Interface/category', ['tintuc' => $tintuc, 'theloai' => $theloai, 'tinhot' => $tinhot, 'tentheloai' => $theloaitieude]);

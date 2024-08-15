@@ -20,11 +20,11 @@
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <div class="form-group">
                 <label for="categoryName">Tên loại tin</label>
-                <input type="text" class="form-control" id="categoryName" name="Ten" placeholder="Nhập tên thể loai">
+                <input type="text" class="form-control" id="categoryName" name="Ten" placeholder="Nhập tên Loại Tin ">
             </div>
             <div class="form-group">
                 <label for="categoryName">Tên Không Dấu</label>
-                <input type="text" class="form-control" id="categoryName" name="TenKD" placeholder="Nhập tên thể loai">
+                <input type="text" class="form-control" id="categoryName" name="TenKD" placeholder="Nhập tên Loại Tin">
             </div>
             <div class="form-group">
                 <label for="categorySelect">Chọn Thể Loại</label>

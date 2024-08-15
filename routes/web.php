@@ -25,10 +25,9 @@ Route::post('Admin/dang-nhap', [UsersController::class, 'postdangnhapAdmin']);
 Route::group(['prefix' => 'Admin', 'middleware' => 'AdminLogin'], function () {
     Route::get('dashboard', function () {
         $nd = Auth::user();
-        return view('Admin/dashboard',["nd" => $nd] );
+        return view('Admin/dashboard', ["nd" => $nd]);
     });
     Route::get('/logout', [UsersController::class, 'dangxuatAdmin'])->name('logout');
-
     Route::group(['prefix' => 'danhmuc'], function () {
         Route::get('/the-loai', [TheloaiController::class, 'TheLoai']);
         Route::post('/them-the-loai', [TheloaiController::class, 'themTheLoai']);
@@ -57,18 +56,18 @@ Route::group(['prefix' => 'Admin', 'middleware' => 'AdminLogin'], function () {
         Route::get('/xoa-nguoi-dung/{id}', [UsersController::class, 'xoaNguoiDung']);
     });
     Route::group(['prefix' => 'lienhe'], function () {
-        Route::get('/danhsach' ,[UsersController::class,'danhsachLienhe']);
-        Route::get('/xoa-lien-he/{id}' ,[UsersController::class,'xoaLienHe']);
+        Route::get('/danhsach', [UsersController::class, 'danhsachLienhe']);
+        Route::get('/xoa-lien-he/{id}', [UsersController::class, 'xoaLienHe']);
     });
 });
 
 Route::get('/', [interfaceController::class, 'index'])->name('index');
 Route::get('/video', [interfaceController::class, 'video']);
-Route::get('/category/{id}', [InterfaceController::class, 'category']);
+Route::get('/category/{theloai_id}', [InterfaceController::class, 'category']);
 Route::post('/postcategory', [InterfaceController::class, 'postCategory']);
 Route::get('/contact-us', [interfaceController::class, 'contact'])->name('contact');
 Route::post('/contact', [interfaceController::class, 'store']);
-Route::get('/news/{id}', [interfaceController::class, 'view']);
+Route::get('/news/{location_name}', [interfaceController::class, 'view']);
 Route::get('/news', [interfaceController::class, 'news'])->name('news');
 Route::get('/login', [interfaceController::class, 'login'])->name('login');
 Route::post('/login', [interfaceController::class, 'postlogin']);

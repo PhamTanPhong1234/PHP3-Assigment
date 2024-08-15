@@ -13,7 +13,7 @@ class TinTucController extends Controller
 {
     function xemTinTuc()
     {
-        $tintuc = TinTuc::orderBy('id', 'ASC')->paginate(10);
+        $tintuc = TinTuc::orderBy('id', 'DESC')->paginate(10);
         return view('Admin/TinTuc/xemtintuc', ['tintuc' => $tintuc]);
     }
     function themTinTuc()
@@ -69,7 +69,7 @@ class TinTucController extends Controller
         $tintuc->idLoaiTin = $request->LoaiTin;
         $tintuc->save();
 
-        return redirect('Admin/tintuc/xem-tin-tuc')->with('thongbao', 'Tin tức đã được tạo thành công.');
+        return redirect('Admin/tintuc/them-tin-tuc')->with('thongbao', 'Tin tức đã được tạo thành công.');
     }
 
 

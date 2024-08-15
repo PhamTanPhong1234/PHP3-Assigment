@@ -32,7 +32,11 @@
             @endforeach
         </select>
     </div>
-
+    <div class="form-group">
+        <label for="image">Hình Ảnh</label>
+        <p> <img src="{{ asset('images/' . $tintuc->Hinh) }}" alt="Hình ảnh" style="width: 100px; height: auto;"></p>
+        <input type="file" class="form-control" id="image" name="image">
+    </div>
     <div class="form-group">
         <label for="content">Mô Tả</label>
         <textarea name="descontent" class="form-control">{{$tintuc->TomTat}}</textarea>
@@ -46,11 +50,7 @@
         <textarea name="luotxem" class="form-control">{{$tintuc->LuotXem}}</textarea>
     </div>
 
-    <div class="form-group">
-        <label for="image">Hình Ảnh</label>
-        <p> <img src="{{ asset('images/' . $tintuc->Hinh) }}" alt="Hình ảnh" style="width: 100px; height: auto;"></p>
-        <input type="file" class="form-control" id="image" name="image">
-    </div>
+
     <div class="form-group">
         <label>Nổi Bật</label>
         <label class="radio-inline"><input name="noibat" type="radio" value="0" @if ($tintuc->NoiBat == 0)

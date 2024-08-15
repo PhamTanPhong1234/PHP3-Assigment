@@ -55,13 +55,13 @@ font-size: 16px;"><a href="/" class="btn btn-danger square-btn-adjust">Quay Về
                         <a href="{{url('Admin/dashboard')}}"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="{{url('Admin/nguoidung/xem-nguoi-dung')}}"><i class="fa fa-desktop fa-3x"></i> Quản Lý Người Dùng</a>
+                        <a href="{{url('Admin/nguoidung/xem-nguoi-dung')}}"><i class="fa fa-user fa-3x"></i> Quản Lý Người Dùng</a>
                     </li>
                     <li>
                         <a href="{{url('Admin/tintuc/xem-tin-tuc')}}"><i class="fa fa-table fa-3x"></i> Quản Lý Tin Tức</a>
                     </li>
                     <li>
-                        <a href="{{url('Admin/tintuc/them-tin-tuc')}}"><i class="fa fa-table fa-3x"></i> Thêm Tin Tức</a>
+                        <a href="{{url('Admin/tintuc/them-tin-tuc')}}"><i class="fa fa-plus fa-3x"></i> Thêm Tin Tức</a>
                     </li>
                     <li>
                         <a href="{{url('Admin/danhmuc/the-loai')}}"><i class="fa fa-table fa-3x"></i> Quản Lý Thể Loại</a>

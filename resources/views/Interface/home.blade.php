@@ -9,8 +9,8 @@
                     <div class="shadoweffect">
                         <div class="shadow-desc">
                             <div class="blog-meta">
-                                <span class="bg-orange"><a href="tech-category-01.html" title="">Thời Sự</a></span>
-                                <h4><a href="news/66" title="">Chủ tịch nước Tô Lâm nhận chức Tổng bí thư Đảng Cộng sản Việt Nam</a></h4>
+                                <span class="bg-orange"><a href="/category/chinh-tri" title="">Thời Sự</a></span>
+                                <h4><a href="news/dong-chi-to-lam-duoc-bau-giu-chuc-tong-bi-thu-ban-chap-hanh-trung-uong-dang-cong-san-viet-nam" title="">Chủ tịch nước Tô Lâm nhận chức Tổng bí thư Đảng Cộng sản Việt Nam</a></h4>
                                 <small><a href="tech-single.html" title="">24 July, 2017</a></small>
                             </div><!-- end meta -->
                         </div><!-- end shadow-desc -->
@@ -24,8 +24,8 @@
                     <div class="shadoweffect">
                         <div class="shadow-desc">
                             <div class="blog-meta">
-                                <span class="bg-orange"><a href="tech-category-01.html" title="">Chính Trị</a></span>
-                                <h4><a href="news/67" title="">Ông Donald Trump bị bắn trong sự kiện tranh cử</a></h4>
+                                <span class="bg-orange"><a href="/category/chinh-tri" title="">Chính Trị</a></span>
+                                <h4><a href="news/vu-am-sat-ong-donald-trump-loi-canh-bao-ve-su-chia-re-va-nguy-co-bao-luc-chinh-tri-o-my" title="">Ông Donald Trump bị bắn trong sự kiện tranh cử</a></h4>
                                 <small><a href="tech-single.html" title="">03 July, 2017</a></small>
                             </div><!-- end meta -->
                         </div><!-- end shadow-desc -->
@@ -39,8 +39,8 @@
                     <div class="shadoweffect">
                         <div class="shadow-desc">
                             <div class="blog-meta">
-                                <span class="bg-orange"><a href="tech-category-01.html" title="">Thời Tiết</a></span>
-                                <h4><a href="news/68" title="">Thời tiết miền Bắc đổ mưa, nhiều tuyến phố ngập lớn</a></h4>
+                                <span class="bg-orange"><a href="/category/thoi-tiet" title="">Thời Tiết</a></span>
+                                <h4><a href="news/mien-bac-mua-lon-keo-dai-toi-ngay-2-8" title="">Thời tiết miền Bắc đổ mưa, nhiều tuyến phố ngập lớn</a></h4>
                                 <small><a href="tech-single.html" title="">01 July, 2017</a></small>
                             </div><!-- end meta -->
                         </div><!-- end shadow-desc -->
@@ -65,7 +65,7 @@
                         <div class="blog-box row">
                             <div class="col-md-4">
                                 <div class="post-media">
-                                    <a href="news/{{$tt->id}}" title="">
+                                    <a href="news/{{$tt->TieuDeKhongDau}}" title="">
                                         <img src="images/{{$tt->Hinh}}" alt="" class="img-fluid">
                                         <div class="hovereffect"></div>
                                     </a>
@@ -73,7 +73,7 @@
                             </div><!-- end col -->
 
                             <div class="blog-meta big-meta col-md-8">
-                                <h4 style="background-color: rgb(247, 247, 247);"><a href="news/{{$tt->id}}" title="" style="text-transform: uppercase;">{{$tt->TieuDe}}</a></h4>
+                                <h4 style="background-color: #fff;"><a href="news/{{$tt->TieuDeKhongDau}}" title="" style="text-transform: uppercase;">{{$tt->TieuDe}}</a></h4>
                                 <p>{{$tt->TomTat}}</p>
                                 <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">{{$tt->LoaiTin->TheLoai->Ten}}</a></small>
                                 <small><a href="tech-single.html" title="">{{ $tt->created_at->format('d-m-Y') }}</a></small>
@@ -106,7 +106,7 @@
                         <h2 class="widget-title" style="color: #009EE5;">THỂ LOẠI</h2>
                         <ul>
                             @foreach($theloai as $tl)
-                            <li class="list-group-item"><a style="font-size: 20px;" href="category/{{$tl->id}}">{{$tl->Ten}}</a></li>
+                            <li class="list-group-item"><a style="font-size: 20px;" href="category/{{$tl->TenKhongDau}}">{{$tl->Ten}}</a></li>
                             @endforeach
                         </ul>
 
@@ -119,7 +119,7 @@
                         <div class="blog-list-widget">
                             <div class="list-group">
                                 @foreach ($tinhot as $th)
-                                <a href="news/{{$th->id}}" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <a href="news/{{$th->TieuDeKhongDau}}" class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="w-100 justify-content-between">
                                         <img src="images/{{$th->Hinh}}" alt="" class="img-fluid float-left">
                                         <h5 class="mb-1">{{$th->TieuDe}}</h5>

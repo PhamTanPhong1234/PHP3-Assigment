@@ -32,7 +32,10 @@
             @endforeach
         </select>
     </div>
-
+    <div class="form-group">
+        <label for="image">Hình Ảnh</label>
+        <input type="file" class="form-control" id="image" name="image">
+    </div>
     <div class="form-group">
         <label for="content">Mô Tả</label>
         <textarea name="descontent"  class="form-control"></textarea>
@@ -43,10 +46,7 @@
     </div>
     <input type="hidden" name="luotxem" value="0">
 
-    <div class="form-group">
-        <label for="image">Hình Ảnh</label>
-        <input type="file" class="form-control" id="image" name="image">
-    </div>
+
     <div class="form-group">
         <label>Nổi Bật</label>
         <label class="radio-inline"><input name="noibat" type="radio" value="1" checked="">CÓ</label>

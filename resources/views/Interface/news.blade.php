@@ -26,10 +26,10 @@
 
                     <form class="d-flex justify-content-end align-items-center" method="POST" action="/postcategory">
                         <div class="form-group mb-2 flex-grow-1"><input type="hidden" name="_token" value="{{csrf_token()}}">
-                            <select class="form-select" name="theloai_id" aria-label="Default select example" style='padding: 11px 24px;margin-right:15px ;'>
+                            <select class="form-select" name="theloai_id" aria-label="Default select example" style='padding: 11px 11px;margin-right:15px;font-size: 20px ;'>
                                 <option selected value="0">Chọn Thể Loại</option>
                                 @foreach($theloai as $tl)
-                                <option value="{{$tl->id}}">{{$tl->Ten}}</option>
+                                <option  value="{{$tl->TenKhongDau}}">{{$tl->Ten}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -42,7 +42,7 @@
                         <div class="blog-box row">
                             <div class="col-md-4">
                                 <div class="post-media">
-                                    <a href="news/{{$tt->id}}" title="">
+                                    <a href="news/{{$tt->TieuDeKhongDau}}" title="">
                                         <img src="images/{{$tt->Hinh}}" alt="" class="img-fluid">
                                         <div class="hovereffect"></div>
                                     </a>
@@ -50,7 +50,7 @@
                             </div><!-- end col -->
 
                             <div class="blog-meta big-meta col-md-8">
-                                <h4 style="background-color: rgb(247, 247, 247);"><a href="news/{{$tt->id}}" title="" style="text-transform: uppercase;">{{$tt->TieuDe}}</a></h4>
+                                <h4 style="background-color: #fff;"><a href="news/{{$tt->TieuDeKhongDau}}" title="" style="text-transform: uppercase;">{{$tt->TieuDe}}</a></h4>
                                 <p>{{$tt->TomTat}}</p>
                                 <small class="firstsmall"><a class="bg-orange" href="tech-category-01.html" title="">{{$tt->LoaiTin->TheLoai->Ten}}</a></small>
                                 <small><a href="tech-single.html" title="">{{ $tt->created_at->format('d-m-Y') }}</a></small>
@@ -121,7 +121,7 @@
                         <div class="blog-list-widget">
                             <div class="list-group">
                                 @foreach ($tinhot as $th)
-                                <a href="news/{{$th->id}}" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <a href="news/{{$th->TieuDeKhongDau}}" class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="w-100 justify-content-between">
                                         <img src="images/{{$th->Hinh}}" alt="" class="img-fluid float-left">
                                         <h5 class="mb-1">{{$th->TieuDe}}</h5>
